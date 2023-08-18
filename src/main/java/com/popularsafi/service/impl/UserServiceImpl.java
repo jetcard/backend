@@ -1,7 +1,7 @@
 package com.popularsafi.service.impl;
 
 import com.popularsafi.repo.UserRepository;
-import com.popularsafi.service.UserDetaillsService;
+import com.popularsafi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserDetaillsServiceImpl implements UserDetaillsService {
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     @Override
     public UserDetailsService userDetailsService() {
@@ -22,17 +22,4 @@ public class UserDetaillsServiceImpl implements UserDetaillsService {
             }
         };
     }
-    /*
-    @Autowired
-    UserRepository userRepository;
-
-    @Override
-    @Transactional
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
-
-        return UserDetailsImpl.build(user);
-    }*/
-
 }

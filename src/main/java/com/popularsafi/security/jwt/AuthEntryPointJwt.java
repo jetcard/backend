@@ -1,6 +1,6 @@
 package com.popularsafi.security.jwt;
 
-import java.io.IOException;
+/*import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,9 +17,9 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component
-public class AuthEntryPointJwt implements AuthenticationEntryPoint {
-
+@Component*/
+public class AuthEntryPointJwt{//} implements AuthenticationEntryPoint {
+/*
     private static final Logger logger = LoggerFactory.getLogger(AuthEntryPointJwt.class);
 
     @Override
@@ -39,5 +39,5 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
         final ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getOutputStream(), body);
     }
-
+*/
 }
