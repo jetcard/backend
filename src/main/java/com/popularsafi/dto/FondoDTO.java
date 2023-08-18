@@ -1,17 +1,17 @@
 package com.popularsafi.dto;
 
-import jakarta.validation.constraints.NotNull;
+//import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
 @Setter
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 public class FondoDTO {
-    @NotNull
+    //@NotNull
     private String C_FONDO_ID;
-    @NotNull
+    //@NotNull
     private String D_FONDO;
 
     public void setC_FONDO_ID(String c_FONDO_ID) {

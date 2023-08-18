@@ -3,10 +3,10 @@ package com.popularsafi.security;
 /*import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;*/
-import org.springframework.beans.factory.annotation.Value;
+/*import org.springframework.beans.factory.annotation.Value;
 /*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
-import org.springframework.stereotype.Component;
+/*import org.springframework.stereotype.Component;
 
 import javax.crypto.spec.SecretKeySpec;
 import java.io.Serializable;
@@ -18,14 +18,14 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Component
-public class JwtTokenUtil implements Serializable {
+@Component*/
+public class JwtTokenUtil{ /*implements Serializable {
 
     //milisegundos
     public final long JWT_TOKEN_VALIDITY = 5 * 60 * 60 * 1000; //5 horas
 
     @Value("${jwt.secret}") //EL Expression Language
-    private String secret;
+    private String secret;*/
 /*
     public String generateToken(UserDetails userDetails){
         Map<String, Object> claims = new HashMap<>();

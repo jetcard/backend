@@ -2,7 +2,7 @@ package com.popularsafi.security;
 
 import com.popularsafi.model.User;
 import com.popularsafi.repo.IUserRepo;
-import lombok.RequiredArgsConstructor;
+///import lombok.RequiredArgsConstructor;
 /*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor*/
 public class JwtUserDetailsService {///implements UserDetailsService {
 
     ///private final IUserRepo repo;

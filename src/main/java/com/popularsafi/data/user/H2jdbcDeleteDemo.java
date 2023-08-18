@@ -1,5 +1,4 @@
 package com.popularsafi.data.user;
-import com.popularsafi.data.Conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,34 +6,50 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class H2jdbcReadDemo {
+public class H2jdbcDeleteDemo {
+    // JDBC driver name and database URL
+    static final String JDBC_DRIVER = "org.h2.Driver";
+    static final String DB_URL = "jdbc:h2:~/test";
+
+    // Database credentials
+    static final String USER = "sa";
+    static final String PASS = "";
 
     public static void main(String[] args) {
         Connection conn = null;
         Statement stmt = null;
         try {
-            conn = Conexion.getConnection();
+            // STEP 1: Register JDBC driver
+            Class.forName(JDBC_DRIVER);
+
+            // STEP 2: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
             // STEP 3: Execute a query
-            System.out.println("Connected database successfully...");
+            System.out.println("Creating table in given database...");
             stmt = conn.createStatement();
-            String sql = "SELECT id, email, password, username FROM USERS";
+            String sql = "DELETE FROM USERS WHERE id = 6";
+            stmt.executeUpdate(sql);
+
+            // Now you can extract all the records
+            // to see the remaining records
+            sql = "SELECT id, email, password, username FROM users";
             ResultSet rs = stmt.executeQuery(sql);
 
-            // STEP 4: Extract data from result set
-            while(rs.next()) {
+            while(rs.next()){
                 // Retrieve by column name
                 int id  = rs.getInt("id");
-                String first = rs.getString("EMAIL");
-                String last = rs.getString("PASSWORD");
-                String username = rs.getString("USERNAME");
+                String age = rs.getString("email");
+                String first = rs.getString("password");
+                String last = rs.getString("username");
 
                 // Display values
                 System.out.print("ID: " + id);
-                System.out.print(", EMAIL: " + first);
-                System.out.println(", PASSWORD: " + last);
-                System.out.println(", username: " + username);
+                System.out.print(", email: " + age);
+                System.out.print(", password: " + first);
+                System.out.println(", username: " + last);
             }
-            // STEP 5: Clean-up environment
             rs.close();
         } catch(SQLException se) {
             // Handle errors for JDBC

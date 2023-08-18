@@ -1,31 +1,55 @@
 package com.popularsafi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+public enum Role {
+    USER,
+    ADMIN
+}
+
+/*
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+///@NoArgsConstructor
+///@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "TAB_ROL")
+@Table(name = "roles")
 public class Role {
-
     @Id
-    @EqualsAndHashCode.Include
-    private Integer C_ROL_ID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(nullable = false, length = 50)
-    private String D_NOMBRE;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
 
-    @Column(nullable = false, length = 100)
-    private String C_ROL;
+    public Role() {
 
+    }
+
+    public Role(ERole name) {
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
+    }
 
 }
+*/
